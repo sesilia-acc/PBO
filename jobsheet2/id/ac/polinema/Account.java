@@ -27,4 +27,12 @@ public class Account {
     public boolean isOverdrawn() {
         return balance < 0;
     }
+    public void transferTo(Account target, double amount) {
+        if (balance >= amount) {
+            balance -= amount;
+            target.balance += amount;
+        } else {
+            System.out.println("Transfer failed: Insufficient balance.");
+        }
+    }
 }
