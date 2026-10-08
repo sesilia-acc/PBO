@@ -14,9 +14,16 @@ public class Main {
         acc2.printInfo();
         acc2.printAccountType();
 
+        Customer customer3 = new Customer("Rudi", "0812-0000-0003");
+        BusinessAccount acc3 = new BusinessAccount("A003", customer3, 1000000, 10000);
+        acc3.withdraw(500000);
+        acc3.printInfo();
+        acc3.printAccountType();
+
         Bank bank = new Bank(10);
         bank.addAccount(acc1);
         bank.addAccount(acc2);
+        bank.addAccount(acc3);
         bank.printAllAccounts();
     }
 }
