@@ -25,5 +25,6 @@ public class Main {
         bank.addAccount(acc2);
         bank.addAccount(acc3);
         bank.printAllAccounts();
+        System.out.println();
     }
 }
