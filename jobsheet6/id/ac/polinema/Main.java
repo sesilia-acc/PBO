@@ -25,6 +25,8 @@ public class Main {
         bank.addAccount(acc2);
         bank.addAccount(acc3);
         bank.printAllAccounts();
-        System.out.println("Total Balance: ");
+        
+        // Perbaikan pada bagian print Total Balance
+        System.out.println("Total Balance: " + bank.getTotalBalance());
     }
 }
