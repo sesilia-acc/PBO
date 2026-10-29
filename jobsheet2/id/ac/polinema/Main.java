@@ -2,7 +2,7 @@ package jobsheet2.id.ac.polinema;
 
 public class Main {
     public static void main(String[] args) {
-        Account[] accounts = new Account[3];
+         Account[] accounts = new Account[3];
 
         accounts[0] = new Account("Nadia", 500000);
         accounts[0].withdraw(150000);

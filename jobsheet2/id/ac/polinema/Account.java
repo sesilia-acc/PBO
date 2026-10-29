@@ -29,8 +29,8 @@ public class Account {
     }
     public void transferTo(Account target, double amount) {
         if (balance >= amount) {
-            balance -= amount;
-            target.balance += amount;
+            this.withdraw(amount);
+            target.deposit(amount);
         } else {
             System.out.println("Transfer failed: Insufficient balance.");
         }

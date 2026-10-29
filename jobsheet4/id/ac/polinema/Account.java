@@ -11,7 +11,7 @@ public class Account {
     public String getAccountNumber() {
         return accountNumber;
     }
-    public Customer getOwner() {
+    public Customer getOwner() {    
         return owner;
     }
     public double getBalance() {
