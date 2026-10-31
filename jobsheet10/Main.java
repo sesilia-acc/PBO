@@ -6,16 +6,17 @@ public class Main {
         SavingsAccount savings = new SavingsAccount("A003", customer, 100000, 0.02);
 
         try {
-            savings.withdraw(70000);
+        savings.withdraw(70000);
         } catch (InsufficientBalanceException e) {
-            System.out.println("withdrawal failed: " + e.getMessage());
+        System.out.println("withdrawal failed: " + e.getMessage());
         }
 
         try {
-            savings.withdraw(30000);
-            System.out.println("Withdrawal succeeded, new balance: " + savings.getBalance());
+        savings.withdraw(30000);
+        System.out.println("Withdrawal succeeded, new balance: " +
+        savings.getBalance());
         } catch (InsufficientBalanceException e) {
-            System.out.println("Withdrawal failed: " + e.getMessage());
+        System.out.println("Withdrawal failed: " + e.getMessage());
         }
 
         Customer customer1 = new Customer("Nadia", "0812-0000-0001");
@@ -29,5 +30,20 @@ public class Main {
         bank.addAccount(acc2);
         bank.addAccount(savings);
         bank.processMonthEnd();
+        bank.printAuditLog();
+
+        try {
+            Account found = bank.findAccount("A001");
+            System.out.println("Found: " + found.getAccountNumber());
+        } catch (AccountNotFoundException e) {
+            System.out.println("Search failed: " + e.getMessage());
+        }
+
+        try {
+            bank.findAccount("A999");
+        } catch (AccountNotFoundException e) {
+            System.out.println("Search failed: " + e.getMessage());
+        }
+        System.out.println("Program tetap berjalan sampai selesai.");
     }
 }
